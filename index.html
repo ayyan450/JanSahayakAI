@@ -5,6 +5,32 @@
 </head>
 <body>
     <h1>Jan Sahayak AI</h1>
-    <p>Mera pehla AI project</p>
+
+    <input type="text" id="question" placeholder="Apna sawal likhiye">
+    <button onclick="reply()">Send</button>
+
+    <p id="answer"></p>
+
+    <script>
+        function reply() {
+            let q = document.getElementById("question").value.toLowerCase();
+            let ans = "";
+
+            if(q.includes("passport")) {
+                ans = "Passport ke liye Passport Seva Portal par apply karein.";
+            }
+            else if(q.includes("train") || q.includes("ticket")) {
+                ans = "Train ticket IRCTC se book kiya jata hai.";
+            }
+            else if(q.includes("aadhar")) {
+                ans = "Aadhaar ki sevaon ke liye UIDAI portal dekhein.";
+            }
+            else {
+                ans = "Mujhe abhi iska jawab nahi pata.";
+            }
+
+            document.getElementById("answer").innerText = ans;
+        }
+    </script>
 </body>
 </html>
